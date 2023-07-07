@@ -20,8 +20,8 @@ const notesController = new NotesController()
 notesRoutes.use(ensureAuthenticated)
 
 notesRoutes.get('/', notesController.index)
-notesRoutes.post('/', /*myMiddleware,*/ notesController.create)
-notesRoutes.get('/:id', /*myMiddleware,*/ notesController.show)
-notesRoutes.delete('/:id', /*myMiddleware,*/ notesController.delete)
+notesRoutes.post('/', notesController.create)
+notesRoutes.get('/:id', notesController.show)
+notesRoutes.delete('/:id', notesController.delete)
 
 module.exports = notesRoutes

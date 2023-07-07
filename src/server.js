@@ -42,13 +42,11 @@ app.use((error, request, response, next) => {
     })
   }
 
-  //console.error(error)
-
   return response.status(500).json({
     status: 'error',
     message: 'Internal server error'
   })
 })
 
-const PORT = process.env.PORT || 3333
+const PORT = process.env.PORT || 5173
 app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`))
