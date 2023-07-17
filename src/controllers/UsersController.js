@@ -3,11 +3,18 @@ const AppError = require('../utils/AppError.js')
 
 const UserRepository = require('../repositories/UserRepository')
 const sqliteConnection = require('../database/sqlite')
-const UserCreateService = require('../services2/UserCreateService.js')
+const UserCreateService = require('../services2/UserCreateService')
 
 class UsersController {
   async create(request, response) {
     const { name, email, password } = request.body
+
+    /*const database = await sqliteConnection()
+    const checkUserExists = await databese.get("SELECT * FROM users WHERE email = (?)", [email]);
+
+    if (checkUserExists) {
+      throw new AppError("Este e-mail já está em uso")
+    }*/
 
     const userRepository = new UserRepository()
     const userCreateService = new UserCreateService(userRepository)

@@ -61,9 +61,9 @@ class NotesController {
   }
 
   async index(request, response) {
-    const { title, tags } = request.query
+    const { title, user_id, tags } = request.query
 
-    const user_id = request.user.id
+    //const user_id = request.user.id
 
     let notes
 
