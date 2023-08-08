@@ -38,8 +38,8 @@ class UsersController {
     //console.log({ user_id })
 
     const database = await sqliteConnection()
-    const user = await database.get('SELECT * FROM users WHERE email = (?)', [
-      email
+    const user = await database.get('SELECT * FROM users WHERE id = (?)', [
+      user_id
     ])
 
     if (!user) {

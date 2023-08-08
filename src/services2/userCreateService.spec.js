@@ -36,6 +36,9 @@ describe('UserCreateService', () => {
       password: '456'
     }
 
+    //const userRepository = new UserRepositoryInMemory()
+    //const userCreateService = new UserCreateService(userRepository)
+
     await userCreateService.execute(user1)
     await expect(userCreateService.execute(user2)).rejects.toEqual(
       new AppError('Este e-mail já está em uso.')
